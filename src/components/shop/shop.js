@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import ShopSearchBar from './shopSearchBar'
+import ShopSearchBar from './shopSearchBar';
 
 class Shop extends Component {
 
@@ -29,7 +29,7 @@ class Shop extends Component {
     }
 
     onSubmit = (fields) => {
-        console.log(fields);
+        this.props.filterProductsWithQuery(fields)
     }
 
     render() {
