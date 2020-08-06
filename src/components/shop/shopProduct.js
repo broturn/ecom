@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Quantity from '../quantity';
 import GreenPriceTag from '../greenPriceTag';
 
-class ShopProducts extends Component {
+class ShopProduct extends Component {
     render() {
         const { _id, title, description, price } = this.props;
         return (
             <div className='shop-product'>
                 <div className='shop-product__title'>
-                    ${title}
+                    {title}
                 </div>
                 <div className='shop-product__description'>
                     {description}
@@ -23,4 +23,4 @@ class ShopProducts extends Component {
     }
 }
 
-export default ShopProducts;
+export default ShopProduct;
