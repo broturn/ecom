@@ -4,9 +4,17 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import ShopSearchBar from './shopSearchBar';
 import ShopProduct from './shopProduct';
-
+import ShopCart from './shopCart';
 
 class Shop extends Component {
+
+    constructor() {
+        super()
+
+        this.state = {
+            showCart: true
+        }
+    }
 
     componentDidMount() {
         const headerLinks = [
@@ -35,11 +43,12 @@ class Shop extends Component {
     }
 
     render() {
+        return <ShopCart className='shop__cart'/>
 
-        return(
+        return (
             <div className='shop'>
                 <ShopSearchBar onSubmit={this.onSubmit} className='shop__search-bar'/>
-               <div className='shop__products'>
+                <div className='shop__products'>
                     {
                         this.props.filteredProducts.map(product => {
                             return (
@@ -47,8 +56,12 @@ class Shop extends Component {
                             )
                         })
                     }
-               </div> 
-               {/* {shop cart button} */}
+                </div>
+                {
+                    this.state.showCart ? <ShopCart className='shop__cart'/> : ''
+                }
+                
+                {/* shop cart button */}
             </div>
         )
     }
