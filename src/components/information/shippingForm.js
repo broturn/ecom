@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { reduxForm, Field } from 'redux-form';
 
-import history from '../../history';
+import { reduxForm, Field } from 'redux-form';
 
 import { FormInput, FormButton } from '../formFields';
 
+import history from '../../history';
 
 class ShippingForm extends Component {
     render() {
         const { className, handleSubmit } = this.props;
 
         return (
-            <form onSubmit={handleSubmit} className={`${className} Shipping-form`}>
+            <form onSubmit={handleSubmit} className={`${className} shipping-form`}>
                 <Field className='shipping-form__name'
                 type='name'
                 title='Name'
@@ -55,6 +55,7 @@ class ShippingForm extends Component {
                 type='button'
                 title='Back'
                 name='back'
+                short={'true'}
                 component={FormButton}/>
                  
             </form>
