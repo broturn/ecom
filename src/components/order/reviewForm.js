@@ -8,7 +8,8 @@ import ReviewProducts from './reviewProducts';
 
 class ReviewForm extends Component {
     render() {
-        const { className, handleSubmit } = this.props;
+        const { className, handleSubmit, subtotal } = this.props;
+        let tax = 0.16;
 
         return (
             <form onSubmit={handleSubmit} className={`${className} review-form`}>

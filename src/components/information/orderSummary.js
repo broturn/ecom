@@ -10,7 +10,7 @@ class OrderSummary extends Component {
         let subtotal = 0;
         let tax = 0.16;
         let amtStickers = 0;
-        this.props.cartProducts.map(catProduct => {
+        this.props.cartProducts.map(cartProduct => {
             subtotal += cartProduct.quantity * cartProduct.product.price;
             amtStickers += cartProduct.quantity;
         })
