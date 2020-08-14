@@ -14,7 +14,8 @@ import * as actions from '../../actions';
     }
 
     onSubmit = (fields) => {
-      console.log(fields);
+      this.props.signIn(fields);
+      this.props.history.push('/account');
     }
 
   render() {
